@@ -1,54 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
-    <link href='../assets/style.css' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <!-- Header section -->
-    <header class="site-header" aria-label="Site header">
-      <h1 class="site-title">Turtle Ipsum</h1>
-      <p class="site-subtitle">The World's Premier Turtle Fan Club</p>
-    </header>
+<html>
+<head>
+    <title>Message</title>
+</head>
+<body>
+    <script>
+        // 템플릿 리터럴을 사용하여 메시지 출력
+        function getMessage(name) {
+            return `Hello, ${name}...`;
+        }
+        const message = getMessage('Ornella');
+        document.write(message);
 
-    <!-- Navigation section -->
-    <nav class="main-nav" aria-label="Main navigation">
-      <h2 class="nav-header">Resources</h2>
-      <ul class="nav-list">
-        <li class="nav-item nav-item-bull"><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles"</a></li>
-        <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtle">Basic Turtle Info</a></li>
-        <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate Turtles</a></li>
-      </ul>
-    </nav>
+        // Done 메시지를 콘솔에 출력하는 함수
+        function displayDone() {
+            console.log('Done!');
+        }
 
-    <!-- Main content section -->
-    <main class="main-content" aria-label="Main content">
-      <section>
-        <h2 class="page-title">Welcome to Turtle Ipsum.</h2>
-        <p><a href="#">Click here</a> to learn more.</p>
-        <p class="article-text">
-          Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <!-- Example of an image with alt attribute -->
-        <img src="../assets/turtle.jpg" alt="A cute turtle swimming in the water">
-      </section>
-    </main>
+        // setInterval을 사용하여 2초마다 Done 메시지 출력
+        setInterval(displayDone, 2000);
 
-    <!-- Footer section -->
-    <footer class="footer" aria-label="Site footer">
-      <section class="footer-section">
-        <button class="button" aria-label="Sign up for turtle news">Sign up for turtle news</button>
-      </section>
-      <section class="footer-section">
-        <h2 class="footer-title">Internal Pages</h2>
-        <ul class="nav-list">
-          <li class="nav-item nav-item-bull"><a href="../">Index</a></li>
-          <li class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></li>
-        </ul>
-      </section>
-      <p class="footer-copyright">&copy; 2016 Instrument</p>
-    </footer>
-  </body>
+        // 3초마다 다른 자기소개 함수가 실행되는 코드
+        let introStep = 0;
+
+        function introPart1() {
+            document.write('<br>이지민입니다');
+        }
+
+        function introPart2() {
+            document.write('<br>제주대학교 컴퓨터공학과 재학중입니다');
+        }
+
+        function introPart3() {
+            document.write('<br>23살입니다');
+        }
+
+        function updateIntro() {
+            // introStep 값에 따라 다른 함수 실행
+            if (introStep === 0) {
+                introPart1();
+            } else if (introStep === 1) {
+                introPart2();
+            } else if (introStep === 2) {
+                introPart3();
+            }
+            
+            // introStep 값을 업데이트하여 다음 함수를 호출하도록 함
+            introStep = (introStep + 1) % 3;
+        }
+
+        // 3초마다 updateIntro 함수가 실행되며 각기 다른 자기소개 내용 출력
+        setInterval(updateIntro, 3000);
+    </script>
+</body>
 </html>
