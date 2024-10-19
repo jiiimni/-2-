@@ -1,0 +1,121 @@
+h1 {
+    color: blue;
+    text-align: center;
+   }
+body {
+    font-family: helvetica, arial, sans-serif;
+}
+
+#left-container {
+    background-color: #baded9;
+    width: 15%;
+    left: 0px;
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+}
+#right-container {
+    background-color: #baded9;
+    width: 15%;
+    right: 0px;
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+}
+.container {
+    background-color: #eee;
+    width: 15%;
+    top: 0px;
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+}
+.plant-holder {
+    position: relative;
+    height: 13%;
+    /* left: -10px; */
+}
+.plant {
+    position: absolute;
+    max-width: 100%;
+    max-height: 120%;
+    z-index: 15;
+}
+.decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffdd57; 
+    z-index: 10;
+}
+.jar-walls {
+    height: 80%;
+    width: 60%;
+    background: #d1e1df;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0.5%;
+    left: 20%;
+    opacity: 0.5;
+    z-index: 1;
+}
+.jar-top {
+    width: 50%;
+    height: 5%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 80.5%;
+    left: 25%;
+    opacity: 0.7;
+    z-index: 1;
+}
+.jar-bottom {
+    width: 50%;
+    height: 1%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+    opacity: 0.7;
+}
+.dirt {
+    width: 60%;
+    height: 5%;
+    background: #3a241d;
+    position: absolute;
+    border-radius: 0 0 1rem 1rem;
+    bottom: 1%;
+    left: 20%;
+    opacity: 0.7;
+    z-index: -1;
+}
+.jar-glossy-long {
+    width: 4%; 
+    height: 20%; 
+    position: absolute;
+    bottom: 20%; 
+    left: 6%; 
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 20px; 
+    z-index: 2; 
+}
+.jar-glossy-short {
+    width: 4%; 
+    height: 5%; 
+    position: absolute;
+    bottom: 45%; 
+    left: 6%;
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px; 
+    z-index: 2; 
+}
+
+
+
+/* div {
+width: 200px;
+height: 100px;
+padding: 10px;
+border: none;
+margin: 20px;
+} */
