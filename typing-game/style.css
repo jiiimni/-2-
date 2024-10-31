@@ -1,0 +1,125 @@
+/* 기존 스타일을 확장 및 업그레이드 */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+    padding: 0.2em;
+    border-radius: 5px;
+}
+
+.error {
+    background-color: lightcoral;
+    color: white;
+    border: 1px solid red;
+    padding: 0.2em;
+    border-radius: 5px;
+}
+
+/* 추가 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: hwb(235 28% 18%);
+    font-weight: bold; /* 글씨체를 두껍게 설정 */
+}
+
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 20px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* 모달 창 스타일 */
+#modal {
+    display: none; /* 기본 상태에서 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 검정 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+#modal-content {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 0.3s ease; /* 모달 등장 애니메이션 */
+}
+
+#modal-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#modal-content p {
+    font-size: 18px;
+    color: #4CAF50;
+    margin: 10px 0;
+}
+
+#close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#close-modal:hover {
+    color: #333;
+}
+
