@@ -35,8 +35,11 @@ document.getElementById('start').addEventListener('click', () => {
     });
     quoteElement.innerHTML = spanWords.join('');
     quoteElement.childNodes[0].className = 'highlight';
-    messageElement.innerText = '';
 
+    // 게임 시작 시 quote 배경색 설정
+    quoteElement.style.backgroundColor = "#f9f5e6"; // 연한 아이보리색 배경
+
+    messageElement.innerText = '';
     typedValueElement.className = ''; // 모든 스타일 초기화
     typedValueElement.value = '';
     typedValueElement.disabled = false; // 입력 상자 활성화
@@ -53,40 +56,61 @@ typedValueElement.addEventListener('input', () => {
     const currentWord = words[wordIndex];
     const typedValue = typedValueElement.value;
 
+    // 기존 스타일 클래스 제거
+    typedValueElement.classList.remove('short-input', 'medium-input', 'long-input');
+
+    // 입력 길이에 따른 CSS 클래스 추가
+    if (typedValue.length > 0 && typedValue.length <= 5) {
+        typedValueElement.classList.add('short-input');
+    } else if (typedValue.length > 5 && typedValue.length <= 10) {
+        typedValueElement.classList.add('medium-input');
+    } else if (typedValue.length > 10) {
+        typedValueElement.classList.add('long-input');
+    }
+    //배경색 변화: 입력된 글자 수에 따라 배경색이 변경됩니다.
+    //확대 효과: transform: scale(...) 속성을 사용하여 글자가 입력될수록 점점 확대됩니다.
+    //그림자 효과: 중간 길이의 입력에서 박스 그림자가 추가되어 강조 효과를 줍니다.
+    //테두리 색상: 길이가 길어지면 테두리 색이 변경되어 시각적인 구분을 줍니다.
+
     // 마지막 단어까지 타이핑을 완료한 경우
     if (typedValue === currentWord && wordIndex === words.length - 1) {
         typedValueElement.className = '';
         const elapsedTime = new Date().getTime() - startTime;
         const timeInSeconds = (elapsedTime / 1000).toFixed(2);
-                // 새로운 점수 추가 및 정렬
-                scoreList.push(parseFloat(timeInSeconds));
-                scoreList.sort((a, b) => a - b);
-                
-                // 상위 5개의 점수만 저장
-                scoreList = scoreList.slice(0, 5);
-                
-                // 로컬 저장소에 점수 리스트 업데이트
-                localStorage.setItem('scoreList', JSON.stringify(scoreList));
-       // 최고 점수 및 순위별 점수 출력
+
+        // 새로운 점수 추가 및 정렬
+        scoreList.push(parseFloat(timeInSeconds));
+        scoreList.sort((a, b) => a - b);
+        
+        // 상위 5개의 점수만 저장
+        scoreList = scoreList.slice(0, 5);
+        
+        // 로컬 저장소에 점수 리스트 업데이트
+        localStorage.setItem('scoreList', JSON.stringify(scoreList));
+
+        // 최고 점수 및 순위별 점수 출력
         const bestScore = scoreList[0]; // 최고 점수는 첫 번째 항목
         const rankMessage = scoreList
-           .map((score, index) => `<p>${index + 1}위: ${score}초</p>`)
-           .join('');
-       
-       // 모달 창에 결과 표시
-       modalMessage.innerHTML = `
-        <p>현재 게임 기록: ${timeInSeconds}초</p>
-           <p> 최고 기록: ${bestScore}초</p>
-           <p>Your Ranking:</p>
-           ${rankMessage}
-       `;
-       modal.style.display = 'block';
+            .map((score, index) => `<p>${index + 1}위: ${score}초</p>`)
+            .join('');
+        
+        // 모달 창에 결과 표시
+        modalMessage.innerHTML = `
+            <p>현재 게임 기록: ${timeInSeconds}초</p>
+            <p> 최고 기록: ${bestScore}초</p>
+            <p>Your Ranking:</p>
+            ${rankMessage}
+        `;
+        modal.style.display = 'block';
 
         messageElement.innerText = `CONGRATULATIONS! You finished in ${timeInSeconds} seconds.`;
         messageElement.className = 'result';
         gameCompleted = true; // 게임 완료 상태로 전환
         typedValueElement.disabled = true; // 입력 상자 비활성화
         startButton.disabled = false; // 시작 버튼 다시 활성화
+
+        // 게임 완료 시 quote 배경색을 초기화
+        quoteElement.style.backgroundColor = "#fdffef"; // 기본 배경색으로 변경
     }
     // 현재 단어가 맞고 다음 단어로 넘어가는 경우
     else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) {
@@ -107,6 +131,7 @@ typedValueElement.addEventListener('input', () => {
         typedValueElement.className = 'error'; // 오류 표시
     }
 });
+
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';
 });
