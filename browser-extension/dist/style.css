@@ -1,0 +1,188 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{
+    margin:0;
+    padding:0
+}
+fieldset,img{
+    border:0 none;
+}
+dl,ul,ol,menu,li{
+    list-style:none;
+}
+blockquote, q{
+    quotes:none;
+}
+blockquote:before, blockquote:after,q:before, q:after{
+    content:'';
+    content:none;
+} 
+input,select,textarea,button{
+    vertical-align:middle;
+    font-size:100%;
+}
+button{
+    border:0 none;
+    background-color:transparent;
+    cursor:pointer;
+} 
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+body{
+    -webkit-text-size-adjust:none;
+    background: #fff;
+} /*뷰포트 변환시 폰트크기 자동확대 방지. */ 
+input[type='text'],input[type='password'],input[type='submit'],
+input[type='search'],input[type='tel'],input[type='email'],html 
+input[type='button'],input[type='reset']{-webkit-appearance:none;border-radius:0} 
+input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none} 
+body{background:#fff} 
+
+body,th,td,input,select,textarea,button{
+    font-size:14px;
+    line-height:1.5;
+    font-family:'Malgun Gothic','맑은 고딕',sans-serif;
+    color:#333;
+} /* color값은 디자인가이드에 맞게사용 */ 
+a{
+    color:#333;
+    text-decoration:none;
+}
+a:active, a:hover{
+    text-decoration:none;
+} 
+address,caption,cite,code,dfn,em,var{
+    font-style:normal;
+    font-weight:normal;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #ffffff; /* 기본 텍스트 색상을 흰색으로 설정 */
+    }
+    th, td, select, textarea, button, h1, h2, h3, h4, h5, h6, p, label, strong, .result, .loading, .errors, .data, .result-container {
+        color: #ffffff !important; /* 모든 텍스트 요소를 흰색으로 설정 */
+    }
+    a {
+        color: #bb86fc;
+    }
+    a:active, a:hover {
+        color: #bb86fc;
+    }
+    input[type="text"],
+    input[type="password"] {
+        color: #000; /* 입력 텍스트를 검정색으로 설정 */
+        background-color: #f0f0f0; /* 연한 회색 배경 유지 */
+    }
+    .container h1, .container p {
+        color: #ffffff !important; /* 제목과 본문 텍스트를 흰색으로 덮어쓰기 */
+    }
+}
+
+/* 전체 가운데 정렬 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* 사진 크기 조절 */
+.container img {
+    max-width: 100%; /* 브라우저 너비에 맞춰 크기 조절 */
+    height: auto; /* 비율 유지 */
+    max-width: 300px; /* 최대 크기를 300px로 제한 */
+    border-radius: 10px; /* 둥근 모서리 */
+    margin-bottom: 20px; /* 아래 여백 */
+}
+
+/* 텍스트 스타일 */
+.container h1{
+    font-size: 2em; /* 제목 크기를 키움 */
+    font-weight: 700; /* 제목을 더 두껍게 */
+    margin-bottom: 10px;
+    color: #333; /* 텍스트 색상 */
+}
+.container p {
+    font-size: 1.2em; /* 제목 크기를 키움 */
+    margin-bottom: 5px;
+    color: #333; /* 텍스트 색상 */
+}
+label {
+    font-weight: 700; /* 글씨를 약간 두껍게 */
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+.region-name,
+.api-key {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* 아래쪽에만 경계선 */
+    background-color: #f0f0f0; /* 연한 회색 배경 */
+    font-size: 1em;
+    outline: none;
+}
+
+/* 입력 칸 포커스 시 스타일 */
+.region-name:focus,
+.api-key:focus {
+    border-bottom: 2px solid #007bff; /* 포커스 시 아래쪽 경계선 색 변경 */
+    background-color: #e8e8e8; /* 포커스 시 약간 더 진한 배경색 */
+}
+.search-btn {
+    background-color: #007bff; /* 파란색 배경 */
+    color: #fff; /* 흰색 글씨 */
+    padding: 8px 16px; /* 패딩을 줄여 크기 축소 */
+    border: none;
+    border-radius: 4px; /* 모서리 둥글게 */
+    font-size: 0.9em; /* 폰트 크기 조금 줄임 */
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3; /* 호버 시 더 진한 파란색 */
+}
+/* Change region 버튼 스타일 */
+.clear-btn {
+    background-color: #007bff; /* 파란색 배경 */
+    color: #fff; /* 흰색 글씨 */
+    padding: 8px 16px; /* 패딩을 submit 버튼과 동일하게 */
+    border: none;
+    border-radius: 4px; /* 모서리 둥글게 */
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.clear-btn:hover {
+    background-color: #0056b3; /* 호버 시 더 진한 파란색 */
+}
+
+/* Set a fixed width and flexible height */
+.container {
+    width: 400px; /* Set your desired width */
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.result-container {
+    display: none; /* 초기에는 숨김 */
+}
