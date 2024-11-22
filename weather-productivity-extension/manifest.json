@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Weather Productivity Tips",
+  "version": "1.0",
+  "description": "Get weather updates and productivity tips tailored to the weather.",
+  "icons": {
+    "48": "icons/weather_icon.png",
+    "128": "icons/weather_icon.png"
+  },
+  "permissions": [
+    "geolocation"
+  ],
+  "host_permissions": [
+    "https://api.openweathermap.org/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/weather_icon.png"
+  }
+}
