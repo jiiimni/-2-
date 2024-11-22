@@ -1,0 +1,64 @@
+/* 기본 배경 색상과 크기 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffde7; /* 연한 노란색 */
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  width: 400px; /* 창 너비 */
+  height: 500px; /* 창 높이 */
+  box-sizing: border-box;
+}
+
+/* 앱 컨테이너 스타일 */
+#app {
+  max-width: 360px;
+  margin: auto;
+}
+
+/* 제목 상단 아이콘 */
+#weather-icon {
+  width: 80px; /* 아이콘 크기 */
+  height: 80px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* 제목 스타일 */
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* 버튼 스타일 */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fbc02d; /* 노란색 버튼 */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f9a825; /* 버튼 호버 색상 */
+}
+
+/* 날씨 정보 스타일 */
+#weather-info {
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 생산성 팁 스타일 */
+#productivity-tips {
+  font-size: 16px; /* 텍스트 크기 */
+  color: #2196f3; /* 하늘색 */
+  margin-top: 20px;
+  line-height: 1.8; /* 줄 간격 조정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  word-wrap: break-word; /* 텍스트 줄바꿈 */
+}
